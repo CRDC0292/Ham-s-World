@@ -120,56 +120,53 @@ public class Play extends BasicGameState {
 		}
 			
 			pigMove = rand.nextInt(4);
+			pigPositionX = pigPositionX + hamPositionX;
+			pigPositionY = pigPositionY + hamPositionY;
 			
 			if(pigMove == 0){
 				pig = pigUp;
 				pigPositionY += delta * .1f;
-				
-				if(hamPositionY + pigPositionY>162){
-					pigPositionY += delta * .1f;
+				pigMove = rand.nextInt(4);
+				if(pigPositionY>162){
+					pigPositionY -= delta * .1f;
 					
+					}
 				}
-			}
+			
 				if(pigMove == 1){
 					pig = pigDown;
 					pigPositionY -= delta * .1f;
-					
+					pigMove = rand.nextInt(4);
 				
-					if(hamPositionY + pigPositionY>-600){
-						pigPositionY -= delta * .1f;
+					if(pigPositionY>-600){
+						pigPositionY += delta * .1f;
 						
+						}
 					}
-				}
+				
 					if(pigMove == 2){
 						pig = pigLeft;
 						pigPositionX += delta * .1f;
-						
+						pigMove = rand.nextInt(4);
 					
-						if(hamPositionX + pigPositionX>334){
-							pigPositionX += delta * .1f;
+						if(pigPositionX>334){
+							pigPositionX -= delta * .1f;
 							
+							}
 						}
-					}
+					
 						if(pigMove == 3){
 							pig = pigRight;
 							pigPositionX -= delta * .1f;
-							
+							pigMove = rand.nextInt(4);
 						
-							if(hamPositionY + pigPositionX>-855){
-								pigPositionY -= delta * .1f;
-								
-							}
+							if(pigPositionX>-855){
+								pigPositionX += delta * .1f;
+							                        
 							
-						}
-						
-							
+									}
+						}				
 			}
-			
-			
-					
-					
-
-	
 
 	public int getID() {
 		return 1;
